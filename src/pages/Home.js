@@ -1,70 +1,146 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   IonButton,
+  IonCard,
+  IonCardContent,
+  IonCardHeader,
+  IonCardSubtitle,
+  IonCardTitle,
+  IonCol,
   IonContent,
+  IonGrid,
   IonHeader,
+  IonIcon,
+  IonImg,
+  IonLabel,
   IonPage,
+  IonRow,
   IonTitle,
   IonToolbar,
 } from "@ionic/react";
+import { colorPaletteOutline } from "ionicons/icons";
+import Personal from "../components/undraw_personal_goals_edgd.svg";
+import Works from "../components/undraw_Firmware_jw6u.svg";
 
 import "../theme/variables.css";
+import useBreakpoints from "../breakpoints";
 
 const Home = () => {
-  const [color, setColor] = useState("lightgreen");
-  const [count, setcount] = useState(0);
-  const changeColor = () => {
-    setcount(count + 1);
-    if (count % 3 == 0) {
-      setColor("lightgreen");
-    } else if (count % 3 == 1) {
-      setColor("lightyellow");
-    } else {
-      setColor("green");
-    }
-  };
+  const lgUp = useBreakpoints({ breakpoint: "lg", dir: "up" });
+  const [red, setRed] = useState(58);
+  const [green, setGreen] = useState(223);
+  const [blue, setBlue] = useState(111);
+  // const [max, setMax] = useState(238);
+  var max = 223;
+  var min = 58;
+  var add = max + min;
+  useEffect(() => {
+    max = Math.max(red, green, blue);
+    min = Math.min(red, green, blue);
+    add = max + min;
+  }, [red, green, blue]);
   return (
-    <IonPage>
+    <IonPage fullscreen>
       <IonContent fullscreen>
-        <div style={{ backgroundColor: color }}>
-          <IonHeader collapse="condense">
-            <IonToolbar>
-              <IonTitle size="large">ホーム</IonTitle>
-            </IonToolbar>
-          </IonHeader>
+        <div
+          className="ion-text-center ion-padding"
+          style={{
+            backgroundColor: `rgba(${red},${green},${blue},0.4)`,
+          }}
+        >
+          <IonLabel>
+            <h1>Hello World!</h1>
+          </IonLabel>
+          {lgUp ? (
+            <p>
+              こちらはt-shinkai00のポートフォリオサイトです。
+              <br />
+              私の身につけたスキルと、これまでに手がけた制作物をご紹介します。
+              <br />
+              このサイトを訪れたあなたに私のことを深く知って欲しいと思って制作しました。
+            </p>
+          ) : (
+            <p>
+              こちらはt-shinkai00のポートフォリオサイトです。
+              私の身につけたスキルと、これまでに手がけた制作物をご紹介します。
+              このサイトを訪れたあなたに私のことを深く知って欲しいと思って制作しました。
+            </p>
+          )}
           <IonButton
+            shape="round"
+            fill="clear"
+            style={{
+              color: `rgba(${add - red},${add - green},${add - blue},1)`,
+            }}
             onClick={() => {
-              changeColor();
+              setRed(Math.random() * 255);
+              setGreen(Math.random() * 255);
+              setBlue(Math.random() * 255);
             }}
           >
-            push!!
+            <IonIcon icon={colorPaletteOutline} />
+            色を変える
           </IonButton>
-          <h1>hello</h1>
-          <h1>hello</h1>
-          <h1>hello</h1>
-          <h1>hello</h1>
-          <h1>hello</h1>
-          <h1>hello</h1>
-          <h1>hello</h1>
-          <h1>hello</h1>
-          <h1>hello</h1>
-          <h1>hello</h1>
-          <h1>hello</h1>
-          <h1>hello</h1>
-          <h1>hello</h1>
-          <h1>hello</h1>
-          <h1>hello</h1>
-          <h1>hello</h1>
-          <h1>hello</h1>
-          <h1>hello</h1>
-          <h1>hello</h1>
-          <h1>hello</h1>
-          <h1>hello</h1>
-          <h1>hello</h1>
-          <h1>hello</h1>
-          <h1>hello</h1>
-          <h1>hello</h1>
-          <h1>hello</h1>
+          {lgUp ? (
+            <IonGrid className="ion-align-items-center">
+              <IonRow>
+                <IonCol>
+                  <IonCard>
+                    <IonCardHeader>
+                      <IonImg
+                        src={Personal}
+                        style={{ height: "50vh" }}
+                      ></IonImg>
+                    </IonCardHeader>
+                    <IonCardContent>
+                      <IonCardTitle>About me</IonCardTitle>
+                      <IonCardSubtitle>
+                        私の生い立ちや趣味などが分かります
+                      </IonCardSubtitle>
+                    </IonCardContent>
+                  </IonCard>
+                </IonCol>
+                <IonCol>
+                  <IonCard>
+                    <IonCardHeader>
+                      <IonImg src={Works} style={{ height: "50vh" }}></IonImg>
+                    </IonCardHeader>
+                    <IonCardContent>
+                      <IonCardTitle>What I made</IonCardTitle>
+                      <IonCardSubtitle>
+                        私が過去に制作したものが分かります
+                      </IonCardSubtitle>
+                    </IonCardContent>
+                  </IonCard>
+                </IonCol>
+              </IonRow>
+            </IonGrid>
+          ) : (
+            <IonGrid className="ion-align-items-center">
+              <IonCard>
+                <IonCardHeader>
+                  <IonImg src={Personal} style={{ height: "50vh" }}></IonImg>
+                </IonCardHeader>
+                <IonCardContent>
+                  <IonCardTitle>About me</IonCardTitle>
+                  <IonCardSubtitle>
+                    私の生い立ちや趣味などが分かります
+                  </IonCardSubtitle>
+                </IonCardContent>
+              </IonCard>
+              <IonCard>
+                <IonCardHeader>
+                  <IonImg src={Works} style={{ height: "50vh" }}></IonImg>
+                </IonCardHeader>
+                <IonCardContent>
+                  <IonCardTitle>What I made</IonCardTitle>
+                  <IonCardSubtitle>
+                    私が過去に制作したものが分かります
+                  </IonCardSubtitle>
+                </IonCardContent>
+              </IonCard>
+            </IonGrid>
+          )}
         </div>
       </IonContent>
     </IonPage>

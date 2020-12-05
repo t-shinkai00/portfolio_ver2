@@ -33,36 +33,57 @@ import "@ionic/react/css/display.css";
 
 /* Theme variables */
 import "./theme/variables.css";
+import useBreakpoints from "./breakpoints";
 
-const App = () => (
-  <IonApp>
-    <IonReactRouter>
-      <IonTabs>
-        <IonRouterOutlet>
-          <Route path="/home" component={Home} exact={true} />
-          <Route path="/about" component={About} exact={true} />
-          <Route path="/works" component={Works} exact={true} />
-          <Route path="/contact" component={Contact} exact={true} />
-          <Route component={NotFound} />
-          <Route exact path="/" render={() => <Redirect to="/home" />} />
-        </IonRouterOutlet>
-        <IonTabBar slot="top">
-          <IonTabButton tab="Home" href="/home">
-            <IonLabel>Top</IonLabel>
-          </IonTabButton>
-          <IonTabButton tab="About" href="/about">
-            <IonLabel>About</IonLabel>
-          </IonTabButton>
-          <IonTabButton tab="Works" href="/works">
-            <IonLabel>Works</IonLabel>
-          </IonTabButton>
-          <IonTabButton tab="Contact" href="/contact">
-            <IonLabel>Contact</IonLabel>
-          </IonTabButton>
-        </IonTabBar>
-      </IonTabs>
-    </IonReactRouter>
-  </IonApp>
-);
+const App = () => {
+  const lgUp = useBreakpoints({ breakpoint: "lg", dir: "up" });
+  return (
+    <IonApp>
+      <IonReactRouter>
+        <IonTabs>
+          <IonRouterOutlet>
+            <Route path="/home" component={Home} exact={true} />
+            <Route path="/about" component={About} exact={true} />
+            <Route path="/works" component={Works} exact={true} />
+            <Route path="/contact" component={Contact} exact={true} />
+            <Route component={NotFound} />
+            <Route exact path="/" render={() => <Redirect to="/home" />} />
+          </IonRouterOutlet>
+          {lgUp ? (
+            <IonTabBar slot="top">
+              <IonTabButton tab="Home" href="/home">
+                <IonLabel>Home</IonLabel>
+              </IonTabButton>
+              <IonTabButton tab="About" href="/about">
+                <IonLabel>About</IonLabel>
+              </IonTabButton>
+              <IonTabButton tab="Works" href="/works">
+                <IonLabel>Works</IonLabel>
+              </IonTabButton>
+              <IonTabButton tab="Contact" href="/contact">
+                <IonLabel>Contact</IonLabel>
+              </IonTabButton>
+            </IonTabBar>
+          ) : (
+            <IonTabBar slot="bottom">
+              <IonTabButton tab="Home" href="/home">
+                <IonLabel>Home</IonLabel>
+              </IonTabButton>
+              <IonTabButton tab="About" href="/about">
+                <IonLabel>About</IonLabel>
+              </IonTabButton>
+              <IonTabButton tab="Works" href="/works">
+                <IonLabel>Works</IonLabel>
+              </IonTabButton>
+              <IonTabButton tab="Contact" href="/contact">
+                <IonLabel>Contact</IonLabel>
+              </IonTabButton>
+            </IonTabBar>
+          )}
+        </IonTabs>
+      </IonReactRouter>
+    </IonApp>
+  );
+};
 
 export default App;

@@ -1,10 +1,15 @@
 import React from "react";
+import { IonPage, IonLabel } from "@ionic/react";
+
+import "../theme/variables.css";
 
 function About() {
   return (
-    <div>
-      <h1>About</h1>
-    </div>
+    <IonPage>
+      <IonLabel>
+        <h1>About</h1>
+      </IonLabel>
+    </IonPage>
   );
 }
 
