@@ -1,10 +1,13 @@
 import React from "react";
+import { IonContent, IonPage } from "@ionic/react";
 
 function Contact() {
   return (
-    <div>
-      <h1>Contact</h1>
-    </div>
+    <IonPage fullscreen>
+      <IonContent>
+        <h1>Contact</h1>
+      </IonContent>
+    </IonPage>
   );
 }
 

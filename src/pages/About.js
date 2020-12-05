@@ -1,14 +1,14 @@
 import React from "react";
-import { IonPage, IonLabel } from "@ionic/react";
+import { IonPage, IonContent } from "@ionic/react";
 
 import "../theme/variables.css";
 
 function About() {
   return (
-    <IonPage>
-      <IonLabel>
+    <IonPage fullscreen>
+      <IonContent>
         <h1>About</h1>
-      </IonLabel>
+      </IonContent>
     </IonPage>
   );
 }
