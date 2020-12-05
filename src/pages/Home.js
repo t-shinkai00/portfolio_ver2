@@ -41,7 +41,7 @@ const Home = () => {
   }, [red, green, blue]);
   return (
     <IonPage fullscreen>
-      <IonContent fullscreen>
+      <IonContent>
         <div
           className="ion-text-center ion-padding"
           style={{
@@ -55,15 +55,15 @@ const Home = () => {
             <p>
               こちらはt-shinkai00のポートフォリオサイトです。
               <br />
-              私の身につけたスキルと、これまでに手がけた制作物をご紹介します。
+              私がこれまでに手がけた制作物をご紹介します。
               <br />
-              このサイトを訪れたあなたに私のことを深く知って欲しいと思って制作しました。
+              このサイトを訪れたあなたに私のことを深く知って欲しいと思い作りました。
             </p>
           ) : (
             <p>
               こちらはt-shinkai00のポートフォリオサイトです。
-              私の身につけたスキルと、これまでに手がけた制作物をご紹介します。
-              このサイトを訪れたあなたに私のことを深く知って欲しいと思って制作しました。
+              私がこれまでに手がけた制作物をご紹介します。
+              このサイトを訪れたあなたに私のことを深く知って欲しいと思い作りました。
             </p>
           )}
           <IonButton
@@ -85,7 +85,7 @@ const Home = () => {
             <IonGrid className="ion-align-items-center">
               <IonRow>
                 <IonCol>
-                  <IonCard>
+                  <IonCard href="/about">
                     <IonCardHeader>
                       <IonImg
                         src={Personal}
@@ -101,7 +101,7 @@ const Home = () => {
                   </IonCard>
                 </IonCol>
                 <IonCol>
-                  <IonCard>
+                  <IonCard href="/works">
                     <IonCardHeader>
                       <IonImg src={Works} style={{ height: "50vh" }}></IonImg>
                     </IonCardHeader>
