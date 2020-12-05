@@ -9,14 +9,11 @@ import {
   IonCol,
   IonContent,
   IonGrid,
-  IonHeader,
   IonIcon,
   IonImg,
   IonLabel,
   IonPage,
   IonRow,
-  IonTitle,
-  IonToolbar,
 } from "@ionic/react";
 import { colorPaletteOutline } from "ionicons/icons";
 import Personal from "../components/undraw_personal_goals_edgd.svg";
@@ -30,7 +27,6 @@ const Home = () => {
   const [red, setRed] = useState(58);
   const [green, setGreen] = useState(223);
   const [blue, setBlue] = useState(111);
-  // const [max, setMax] = useState(238);
   var max = 223;
   var min = 58;
   var add = max + min;
