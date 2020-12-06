@@ -24,6 +24,7 @@ import useBreakpoints from "../breakpoints";
 
 const Home = () => {
   const lgUp = useBreakpoints({ breakpoint: "lg", dir: "up" });
+
   const [red, setRed] = useState(58);
   const [green, setGreen] = useState(223);
   const [blue, setBlue] = useState(111);
@@ -35,6 +36,7 @@ const Home = () => {
     min = Math.min(red, green, blue);
     add = max + min;
   }, [red, green, blue]);
+
   return (
     <IonPage fullscreen>
       <IonContent>
