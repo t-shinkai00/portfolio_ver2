@@ -5,8 +5,8 @@ import Footer from "./Footer";
 
 function Works() {
   return (
-    <IonPage fullscreen>
-      <IonContent>
+    <IonPage>
+      <IonContent fullscreen>
         <h1>Works</h1>
         <Footer />
       </IonContent>
