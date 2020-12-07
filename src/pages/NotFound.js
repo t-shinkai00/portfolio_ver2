@@ -125,7 +125,7 @@ function NotFound() {
             },
           }}
         ></Particles>
-        <div className="ion-text-center">
+        <div className="ion-text-center" style={{ paddingTop: "15em" }}>
           <h1>
             ページが見つかりませんでした。
             <br />
