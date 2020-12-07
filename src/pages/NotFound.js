@@ -1,5 +1,5 @@
 import React from "react";
-import { IonPage, IonLabel, IonContent, IonButton } from "@ionic/react";
+import { IonPage, IonContent, IonButton } from "@ionic/react";
 import Particles from "react-particles-js";
 
 function NotFound() {
