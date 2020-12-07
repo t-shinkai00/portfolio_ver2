@@ -70,10 +70,10 @@ const App = () => {
                 <IonIcon icon={codeSlashOutline} />
                 <IonLabel>Works</IonLabel>
               </IonTabButton>
-              <IonTabButton tab="Contact" href="/contact">
+              {/* <IonTabButton tab="Contact" href="/contact">
                 <IonIcon icon={sendOutline} />
                 <IonLabel>Contact</IonLabel>
-              </IonTabButton>
+              </IonTabButton> */}
             </IonTabBar>
           ) : (
             <IonTabBar slot="bottom">
@@ -89,10 +89,10 @@ const App = () => {
                 <IonIcon icon={codeSlashOutline} />
                 <IonLabel>Works</IonLabel>
               </IonTabButton>
-              <IonTabButton tab="Contact" href="/contact">
+              {/* <IonTabButton tab="Contact" href="/contact">
                 <IonIcon icon={sendOutline} />
                 <IonLabel>Contact</IonLabel>
-              </IonTabButton>
+              </IonTabButton> */}
             </IonTabBar>
           )}
         </IonTabs>
