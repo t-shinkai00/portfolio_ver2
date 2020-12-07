@@ -27,7 +27,8 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0",
     "three": "^0.123.0",
-    "typescript": "3.8.3"
+    "typescript": "3.8.3",
+    "video-react": "^0.14.1"
   },
   "scripts": {
     "start": "react-scripts start",
