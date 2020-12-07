@@ -25,11 +25,14 @@ import useBreakpoints from "../breakpoints";
 const Home = () => {
   const lgUp = useBreakpoints({ breakpoint: "lg", dir: "up" });
 
-  const [red, setRed] = useState(58);
-  const [green, setGreen] = useState(223);
-  const [blue, setBlue] = useState(111);
-  var max = 223;
-  var min = 58;
+  const [red, setRed] = useState(255);
+  // const [red, setRed] = useState(58);
+  const [green, setGreen] = useState(255);
+  // const [green, setGreen] = useState(223);
+  const [blue, setBlue] = useState(255);
+  // const [blue, setBlue] = useState(111);
+  var max = Math.max(red, green, blue);
+  var min = Math.min(red, green, blue);
   var add = max + min;
   useEffect(() => {
     max = Math.max(red, green, blue);
@@ -115,7 +118,7 @@ const Home = () => {
             </IonGrid>
           ) : (
             <IonGrid className="ion-align-items-center">
-              <IonCard>
+              <IonCard href="/about">
                 <IonCardHeader>
                   <IonImg src={Personal} style={{ height: "50vh" }}></IonImg>
                 </IonCardHeader>
@@ -126,7 +129,7 @@ const Home = () => {
                   </IonCardSubtitle>
                 </IonCardContent>
               </IonCard>
-              <IonCard>
+              <IonCard href="/works">
                 <IonCardHeader>
                   <IonImg src={Works} style={{ height: "50vh" }}></IonImg>
                 </IonCardHeader>
