@@ -5,9 +5,9 @@ import "../theme/variables.css";
 
 function About() {
   return (
-    <IonPage fullscreen>
-      <IonContent>
-        <h1>About</h1>
+    <IonPage>
+      <IonContent fullscreen>
+        <h1>about</h1>
       </IonContent>
     </IonPage>
   );
