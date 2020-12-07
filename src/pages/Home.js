@@ -31,14 +31,6 @@ const Home = () => {
   // const [green, setGreen] = useState(223);
   const [blue, setBlue] = useState(255);
   // const [blue, setBlue] = useState(111);
-  var max = Math.max(red, green, blue);
-  var min = Math.min(red, green, blue);
-  var add = max + min;
-  useEffect(() => {
-    max = Math.max(red, green, blue);
-    min = Math.min(red, green, blue);
-    add = max + min;
-  }, [red, green, blue]);
 
   return (
     <IonPage fullscreen>
@@ -69,10 +61,10 @@ const Home = () => {
           )}
           <IonButton
             shape="round"
-            fill="clear"
-            style={{
-              color: `rgba(${add - red},${add - green},${add - blue},1)`,
-            }}
+            fill="solid"
+            // style={{
+            //   color: `rgb(${255 - red},${255 - green},${255 - blue})`,
+            // }}
             onClick={() => {
               setRed(Math.random() * 255);
               setGreen(Math.random() * 255);
