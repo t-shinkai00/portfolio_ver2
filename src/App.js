@@ -7,6 +7,7 @@ import {
   IonTabBar,
   IonTabButton,
   IonLabel,
+  IonIcon,
 } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
 import NotFound from "./pages/NotFound";
@@ -33,6 +34,12 @@ import "@ionic/react/css/display.css";
 
 /* Theme variables */
 import "./theme/variables.css";
+import {
+  codeSlashOutline,
+  homeOutline,
+  personCircleOutline,
+  sendOutline,
+} from "ionicons/icons";
 import useBreakpoints from "./breakpoints";
 
 const App = () => {
@@ -52,30 +59,38 @@ const App = () => {
           {lgUp ? (
             <IonTabBar slot="top">
               <IonTabButton tab="Home" href="/home">
+                <IonIcon icon={homeOutline} />
                 <IonLabel>Home</IonLabel>
               </IonTabButton>
               <IonTabButton tab="About" href="/about">
+                <IonIcon icon={personCircleOutline} />
                 <IonLabel>About</IonLabel>
               </IonTabButton>
               <IonTabButton tab="Works" href="/works">
+                <IonIcon icon={codeSlashOutline} />
                 <IonLabel>Works</IonLabel>
               </IonTabButton>
               <IonTabButton tab="Contact" href="/contact">
+                <IonIcon icon={sendOutline} />
                 <IonLabel>Contact</IonLabel>
               </IonTabButton>
             </IonTabBar>
           ) : (
             <IonTabBar slot="bottom">
               <IonTabButton tab="Home" href="/home">
+                <IonIcon icon={homeOutline} />
                 <IonLabel>Home</IonLabel>
               </IonTabButton>
               <IonTabButton tab="About" href="/about">
+                <IonIcon icon={personCircleOutline} />
                 <IonLabel>About</IonLabel>
               </IonTabButton>
               <IonTabButton tab="Works" href="/works">
+                <IonIcon icon={codeSlashOutline} />
                 <IonLabel>Works</IonLabel>
               </IonTabButton>
               <IonTabButton tab="Contact" href="/contact">
+                <IonIcon icon={sendOutline} />
                 <IonLabel>Contact</IonLabel>
               </IonTabButton>
             </IonTabBar>
