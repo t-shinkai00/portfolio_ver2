@@ -46,41 +46,41 @@ const App = () => {
       <IonReactRouter>
         <IonTabs>
           <IonRouterOutlet>
-            <Route path="/home" component={Home} exact={true} />
+            <Route path="/" component={Home} exact={true} />
             {/* <Route path="/about" component={About} exact={true} /> */}
             {/* <Route path="/works" component={Works} exact={true} /> */}
             <Route component={NotFound} />
-            <Route exact path="/" render={() => <Redirect to="/home" />} />
+            {/* <Route exact path="/" render={() => <Redirect to="/home" />} /> */}
           </IonRouterOutlet>
           {/* <IonTabBar slot="top">
             <Header />
           </IonTabBar> */}
           {lgUp ? (
-            <IonTabBar slot="top" color="tertiary">
-              <IonTabButton tab="Home" href="/home">
+            <IonTabBar slot="top" color="dark">
+              <IonTabButton tab="Home">
                 <IonIcon icon={homeOutline} />
                 <IonLabel>Home</IonLabel>
               </IonTabButton>
-              <IonTabButton tab="About" href="/about">
+              <IonTabButton tab="About">
                 <IonIcon icon={personCircleOutline} />
                 <IonLabel>About</IonLabel>
               </IonTabButton>
-              <IonTabButton tab="Works" href="/works">
+              <IonTabButton tab="Works">
                 <IonIcon icon={codeSlashOutline} />
                 <IonLabel>Works</IonLabel>
               </IonTabButton>
             </IonTabBar>
           ) : (
-            <IonTabBar slot="bottom">
-              <IonTabButton tab="Home" href="/home">
+            <IonTabBar slot="bottom" color="dark">
+              <IonTabButton tab="Home">
                 <IonIcon icon={homeOutline} />
                 <IonLabel>Home</IonLabel>
               </IonTabButton>
-              <IonTabButton tab="About" href="/about">
+              <IonTabButton tab="About">
                 <IonIcon icon={personCircleOutline} />
                 <IonLabel>About</IonLabel>
               </IonTabButton>
-              <IonTabButton tab="Works" href="/works">
+              <IonTabButton tab="Works">
                 <IonIcon icon={codeSlashOutline} />
                 <IonLabel>Works</IonLabel>
               </IonTabButton>
