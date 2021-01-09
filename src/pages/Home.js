@@ -8,19 +8,12 @@ import {
   IonCardTitle,
   IonCol,
   IonContent,
-  IonFooter,
   IonGrid,
   IonIcon,
   IonImg,
   IonLabel,
   IonPage,
   IonRow,
-  IonToolbar,
-  IonTitle,
-  IonMenu,
-  IonHeader,
-  IonList,
-  IonItem,
 } from "@ionic/react";
 import { colorPaletteOutline } from "ionicons/icons";
 import Personal from "../components/undraw_personal_goals_edgd.svg";
@@ -34,17 +27,14 @@ import Footer from "./Footer";
 const Home = () => {
   const lgUp = useBreakpoints({ breakpoint: "lg", dir: "up" });
 
-  const [red, setRed] = useState(255);
-  // const [red, setRed] = useState(58);
-  const [green, setGreen] = useState(255);
-  // const [green, setGreen] = useState(223);
-  const [blue, setBlue] = useState(255);
-  // const [blue, setBlue] = useState(111);
+  const [red, setRed] = useState(58);
+  const [green, setGreen] = useState(223);
+  const [blue, setBlue] = useState(111);
 
   return (
     <IonPage>
       <IonContent fullscreen>
-        <div
+        <section
           className="ion-text-center ion-padding"
           style={{
             backgroundColor: `rgba(${red},${green},${blue},0.4)`,
@@ -144,7 +134,7 @@ const Home = () => {
             </IonGrid>
           )}
           <Footer />
-        </div>
+        </section>
       </IonContent>
     </IonPage>
   );
