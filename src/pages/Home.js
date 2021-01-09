@@ -1,27 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import Typical from "react-typical";
 import {
-  IonButton,
-  IonCard,
-  IonCardContent,
-  IonCardHeader,
-  IonCardSubtitle,
-  IonCardTitle,
-  IonCol,
   IonContent,
   IonFab,
   IonFabButton,
-  IonGrid,
   IonIcon,
-  IonImg,
   IonLabel,
   IonPage,
-  IonRow,
 } from "@ionic/react";
 import { colorPaletteOutline } from "ionicons/icons";
-import PersonalImage from "../components/undraw_personal_goals_edgd.svg";
-import WorksImage from "../components/undraw_Firmware_jw6u.svg";
 import TableImage from "../components/table.jpeg";
-import Typical from "react-typical";
 
 import "../theme/variables.css";
 import useBreakpoints from "../breakpoints";
@@ -34,8 +22,6 @@ const Home = () => {
   const [red, setRed] = useState(234);
   const [green, setGreen] = useState(139);
   const [blue, setBlue] = useState(201);
-
-  console.log(red, green, blue);
 
   return (
     <IonPage>
@@ -76,11 +62,11 @@ const Home = () => {
           className="ion-text-center"
           style={{
             background: `linear-gradient(to right, rgb(255,161,3) ,rgba(${red},${green},${blue},0.4))`,
-            height: "100vh",
+            height: "93vh",
             borderBottom: "2px solid grey",
           }}
         >
-          {/* <div
+          <div
             style={{
               width: "100vw",
               height: "50vh",
@@ -88,7 +74,7 @@ const Home = () => {
               backgroundSize: "cover",
               backgroundPosition: "top left",
             }}
-          /> */}
+          />
           <div
             style={{
               paddingTop: "15vh",
@@ -123,7 +109,7 @@ const Home = () => {
           className="ion-text-center"
           style={{
             background: `linear-gradient(to right, rgb(255,161,3) ,rgba(${red},${green},${blue},0.4))`,
-            height: "100vh",
+            height: "93vh",
             borderBottom: "2px solid grey",
           }}
         >

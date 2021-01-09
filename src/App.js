@@ -17,9 +17,6 @@ import {
 import { IonReactRouter } from "@ionic/react-router";
 import NotFound from "./pages/NotFound";
 import Home from "./pages/Home";
-import About from "./pages/About";
-import Works from "./pages/Works";
-import Header from "./components/Header";
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -50,8 +47,8 @@ const App = () => {
         <IonTabs>
           <IonRouterOutlet>
             <Route path="/home" component={Home} exact={true} />
-            <Route path="/about" component={About} exact={true} />
-            <Route path="/works" component={Works} exact={true} />
+            {/* <Route path="/about" component={About} exact={true} /> */}
+            {/* <Route path="/works" component={Works} exact={true} /> */}
             <Route component={NotFound} />
             <Route exact path="/" render={() => <Redirect to="/home" />} />
           </IonRouterOutlet>
@@ -59,7 +56,7 @@ const App = () => {
             <Header />
           </IonTabBar> */}
           {lgUp ? (
-            <IonTabBar slot="top" color="medium">
+            <IonTabBar slot="top" color="tertiary">
               <IonTabButton tab="Home" href="/home">
                 <IonIcon icon={homeOutline} />
                 <IonLabel>Home</IonLabel>
