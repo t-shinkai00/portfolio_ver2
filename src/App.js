@@ -9,11 +9,17 @@ import {
   IonLabel,
   IonIcon,
 } from "@ionic/react";
+import {
+  codeSlashOutline,
+  homeOutline,
+  personCircleOutline,
+} from "ionicons/icons";
 import { IonReactRouter } from "@ionic/react-router";
 import NotFound from "./pages/NotFound";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Works from "./pages/Works";
+import Header from "./components/Header";
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -33,11 +39,7 @@ import "@ionic/react/css/display.css";
 
 /* Theme variables */
 import "./theme/variables.css";
-import {
-  codeSlashOutline,
-  homeOutline,
-  personCircleOutline,
-} from "ionicons/icons";
+
 import useBreakpoints from "./breakpoints";
 
 const App = () => {
@@ -53,8 +55,11 @@ const App = () => {
             <Route component={NotFound} />
             <Route exact path="/" render={() => <Redirect to="/home" />} />
           </IonRouterOutlet>
+          {/* <IonTabBar slot="top">
+            <Header />
+          </IonTabBar> */}
           {lgUp ? (
-            <IonTabBar slot="top">
+            <IonTabBar slot="top" color="medium">
               <IonTabButton tab="Home" href="/home">
                 <IonIcon icon={homeOutline} />
                 <IonLabel>Home</IonLabel>
