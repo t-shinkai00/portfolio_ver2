@@ -2,7 +2,7 @@ import React from "react";
 import { IonPage, IonContent } from "@ionic/react";
 
 import "../theme/variables.css";
-import Footer from "./Footer";
+import Footer from "../components/Footer";
 
 function About() {
   return (

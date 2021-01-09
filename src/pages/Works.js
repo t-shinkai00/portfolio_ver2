@@ -1,7 +1,7 @@
 import React from "react";
 import { IonPage, IonContent } from "@ionic/react";
 
-import Footer from "./Footer";
+import Footer from "../components/Footer";
 
 function Works() {
   return (
