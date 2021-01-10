@@ -1,5 +1,6 @@
 import React from "react";
 import { Redirect, Route } from "react-router-dom";
+import { IonReactRouter } from "@ionic/react-router";
 import {
   IonApp,
   IonRouterOutlet,
@@ -14,9 +15,6 @@ import {
   homeOutline,
   personCircleOutline,
 } from "ionicons/icons";
-import { IonReactRouter } from "@ionic/react-router";
-import NotFound from "./pages/NotFound";
-import Home from "./pages/Home";
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -39,6 +37,11 @@ import "./theme/variables.css";
 
 import useBreakpoints from "./breakpoints";
 
+import NotFound from "./pages/NotFound";
+import Home from "./pages/Home";
+import Skills from "./pages/Skills";
+import Works from "./pages/Works";
+
 const App = () => {
   const lgUp = useBreakpoints({ breakpoint: "lg", dir: "up" });
   return (
@@ -46,41 +49,41 @@ const App = () => {
       <IonReactRouter>
         <IonTabs>
           <IonRouterOutlet>
-            <Route path="/" component={Home} exact={true} />
-            {/* <Route path="/about" component={About} exact={true} /> */}
-            {/* <Route path="/works" component={Works} exact={true} /> */}
+            <Route path="/home" component={Home} exact={true} />
+            <Route path="/skills" component={Skills} exact={true} />
+            <Route path="/works" component={Works} exact={true} />
             <Route component={NotFound} />
-            {/* <Route exact path="/" render={() => <Redirect to="/home" />} /> */}
+            <Route exact path="/" render={() => <Redirect to="/home" />} />
           </IonRouterOutlet>
           {/* <IonTabBar slot="top">
             <Header />
           </IonTabBar> */}
           {lgUp ? (
             <IonTabBar slot="top" color="dark">
-              <IonTabButton tab="Home">
+              <IonTabButton tab="Home" href="/home">
                 <IonIcon icon={homeOutline} />
                 <IonLabel>Home</IonLabel>
               </IonTabButton>
-              <IonTabButton tab="About">
+              <IonTabButton tab="Skills" href="/skills">
                 <IonIcon icon={personCircleOutline} />
-                <IonLabel>About</IonLabel>
+                <IonLabel>Skills</IonLabel>
               </IonTabButton>
-              <IonTabButton tab="Works">
+              <IonTabButton tab="Works" href="/works">
                 <IonIcon icon={codeSlashOutline} />
                 <IonLabel>Works</IonLabel>
               </IonTabButton>
             </IonTabBar>
           ) : (
             <IonTabBar slot="bottom" color="dark">
-              <IonTabButton tab="Home">
+              <IonTabButton tab="Home" href="/home">
                 <IonIcon icon={homeOutline} />
                 <IonLabel>Home</IonLabel>
               </IonTabButton>
-              <IonTabButton tab="About">
+              <IonTabButton tab="Skills" href="/skills">
                 <IonIcon icon={personCircleOutline} />
-                <IonLabel>About</IonLabel>
+                <IonLabel>Skills</IonLabel>
               </IonTabButton>
-              <IonTabButton tab="Works">
+              <IonTabButton tab="Works" href="/works">
                 <IonIcon icon={codeSlashOutline} />
                 <IonLabel>Works</IonLabel>
               </IonTabButton>

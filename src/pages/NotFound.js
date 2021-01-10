@@ -131,7 +131,7 @@ function NotFound() {
             <br />
             正しいURLを入力するか、下のボタンを押してください。
           </h1>
-          <IonButton href="/" color="dark" fill="outline">
+          <IonButton href="/home" color="dark" fill="outline">
             ホームへ
           </IonButton>
         </div>
